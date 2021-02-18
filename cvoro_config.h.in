@@ -1,0 +1,18 @@
+#pragma once
+
+// do not modify cvoro_config.h, it is build from cvoro_config.h.in
+#cmakedefine USE_DOUBLE
+
+#ifndef USE_DOUBLE
+#  define real float
+#  define real4 cl_float4
+#else
+#  define real double
+#  define real4 cl_double4
+#endif
+
+#  define CVORO_STATUS_FILE "${CMAKE_CURRENT_SOURCE_DIR}/Status.h"
+#  define CVORO_CONVEX_CELL_FILE "${CMAKE_CURRENT_SOURCE_DIR}/ConvexCell.cl"
+#  define CVORO_KNEAREST_FILE "${CMAKE_CURRENT_SOURCE_DIR}/knearests.cl"
+#  define CVORO_OPTIONS_FILE "${CMAKE_CURRENT_SOURCE_DIR}/cvoro_options.txt"
+
