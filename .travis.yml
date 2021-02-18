@@ -1,0 +1,29 @@
+language: cpp
+
+matrix:
+  include:
+    - name: "Bionic Linux"
+      os: linux
+      dist: bionic
+      sudo: required
+      compiler: gcc
+      before_install: sudo apt-get install ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers
+    - name: "MacOS"
+      os: osx
+      osx_image: xcode11  # macOS 10.14.3
+      compiler: clang
+
+addons:
+  apt:
+    packages:
+      - cmake
+
+before_script:
+  # create a build folder for the out-of-source build
+  - mkdir build
+  # switch to build directory
+  - cd build
+  - cmake ..
+
+script:
+  - sudo make
