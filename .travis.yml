@@ -27,5 +27,3 @@ before_script:
 
 script:
   - sudo make
-  - cd ..
-  - build/test_voronoi --CPU --K=20 --P=25 --V=30 data/100K-blue.xyz
